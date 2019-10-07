@@ -1,7 +1,6 @@
 const { Schema, model } = require("mongoose");
 
 
-
 const CarSchema = new Schema({
     InitialKilometer: {
         type: String, 
