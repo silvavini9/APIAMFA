@@ -1,20 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const Router = require('./routes');
+const Routes = require('./routes');
 
 const server = express();
 
-() => {
-        () => { 
-            return mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-pwpof.mongodb.net/test?retryWrites=true&w=majority', {
-            useNewUrlParser: true
-            })
-    }
-}
+mongoose.connect('mongodb+srv://omnistack:oEKaDViFHOX4Y9zD@api-pwpof.mongodb.net/admin?retryWrites=true&w=majority',{
+     useNewUrlParser: true,
+     useUnifiedTopology: true
+});
 
 server.use(express.json())
-server.use(routes);
+server.use(Routes);
 
 // GET, POST, PUT, DELETE
 

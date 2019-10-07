@@ -1,18 +1,31 @@
-const axios = require('axios');
 const Car = require('../models/car');
+const Json = {
+    "placa": "htt3233",
+    "kilometroAtual": "2000",
+    "kilometroFinal": "3000",
+    "litrosAbastecidos": "25",
+}
 
 module.exports = {
-    async store(req, res) {
-        const { } = req.body;
-
-        const car = await Dev.create({
-            
-        });
-
-        return res.json(dev);
-    },
     average(req, res){
-        this.store(req, res);
+        const { placa, kilometroAtual, kilometroFinal, litrosAbastecidos  } = Json;
 
-    }
+        const media = (kilometroFinal - kilometroAtual)/litrosAbastecidos;
+
+        return  media;    
+    },
+
+    store(req, res) {
+        const {placa} = Json;
+        
+        const media = average(req,res);
+
+        const car = new Car({
+            placa
+            media,
+        })
+
+        return res.json(car);
+    },
+    
 }

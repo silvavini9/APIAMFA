@@ -2,18 +2,14 @@ const { Schema, model } = require("mongoose");
 
 
 const CarSchema = new Schema({
-    InitialKilometer: {
-        type: String, 
-        required: true,
-    },
-    FinalKilometer: {
+    Placa: {
         type: String,
         required: true,
     },
-    LitersFueled: {
-        type: Int8Array,
-        required: true,
-    },
+    Media: [{
+        type: String,
+        date: Date.now(),
+    }],
 })
 
 module.exports = model('Car', CarSchema);
