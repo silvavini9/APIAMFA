@@ -5,7 +5,7 @@ const Routes = require('./routes');
 
 const server = express();
 
-mongoose.connect('mongodb+srv://omnistack:oEKaDViFHOX4Y9zD@api-pwpof.mongodb.net/admin?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://APIAMFA:hAkYP3WowEc4Ca6i@api-pwpof.mongodb.net/test?retryWrites=true&w=majority',{
      useNewUrlParser: true,
      useUnifiedTopology: true
 });
