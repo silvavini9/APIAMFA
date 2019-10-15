@@ -6,7 +6,7 @@ const CarSchema = new Schema({
         type: String,
         required: true,
     },
-    Media: [{
+    average: [{
         type: String,
         date: Date.now(),
     }],
