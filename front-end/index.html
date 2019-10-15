@@ -12,7 +12,8 @@
 </head>
 
 <body>
-  <h1>KMCar</h1>
+  <h1>
+    <span class="bold">KM</span>Car</h1>
   <main>
     <form action="localhost:3000/car/average/" method="POST">
       <div class="formField">
@@ -22,6 +23,14 @@
       <div class="formField">
         <label for="km">Kilometragem Atual</label>
         <input type="number" name="km" id="km" placeholder="322" />
+      </div>
+      <div class="formField">
+        <label for="km">Kilometragem Final</label>
+        <input type="number" name="endKm" id="endKm" placeholder="344" />
+      </div>
+      <div class="formField">
+        <label for="km">Litros Abastecidos</label>
+        <input type="number" name="filledFuel" id="filledFuel" placeholder="42" />
       </div>
       <div class="formSubmitDiv">
         <input type="submit" value="Confirmar">
