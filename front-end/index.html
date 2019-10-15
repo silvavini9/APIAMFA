@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KMCar</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./static/css/main.css">
+</head>
+
+<body>
+  <h1>KMCar</h1>
+  <main>
+    <form action="localhost:3000/car/average/" method="POST">
+      <div class="formField">
+        <label for="plate">Placa</label>
+        <input type="text" name="plate" id="plate" placeholder="ABC-0000" />
+      </div>
+      <div class="formField">
+        <label for="km">Kilometragem Atual</label>
+        <input type="number" name="km" id="km" placeholder="322" />
+      </div>
+      <div class="formSubmitDiv">
+        <input type="submit" value="Confirmar">
+      </div>
+    </form>
+  </main>
+  <script type="text/javascript" src="app/controllers/index.js"></script>
+</body>
+
+</html>
