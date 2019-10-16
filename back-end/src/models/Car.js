@@ -1,13 +1,12 @@
 const { Schema, model } = require("mongoose");
 
-
 const CarSchema = new Schema({
-    Placa: {
+    placa: {
         type: String,
         required: true,
     },
     averages: [{
-        average:{type: String  },
+        average:{type: String },
         date: {type: Date, default: Date.now()}
     }],
 

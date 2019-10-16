@@ -6,18 +6,22 @@ module.exports = {
     },
 
     async store(req, res) {
-        var { placa, kilometroInicial, kilometroFinal, litrosAbastecidos  } = req.body;
+        const { placa, kilometroInicial, kilometroFinal, litrosAbastecidos  } = req.body;
 
-        var average = (kilometroFinal - kilometroInicial)/litrosAbastecidos;
-        var carExist = await Car.findOne({placa: placa});
-        console.log(average)
-        if(carExist){
-                return await Car.findOneAndUpdate({ placa: placa }, {$push: {
-                    averages: {average} }
-                });  
-      
+        const average = (kilometroFinal - kilometroInicial)/litrosAbastecidos;
+        let carExist = await Car.findOne({placa: placa});
+
+        if( carExist != null ){
+            carExist.averages.push(average);
+            await carExist.save( (error) => {
+                if(error){
+                    res.json(error);
+                }else {
+                    res.json(carExist);
+                }
+            });
         }else {
-            var car = new Car({
+            const car = new Car({
                 placa: placa,
                 averages: {average},
             });
@@ -31,10 +35,9 @@ module.exports = {
                 }
             });
         }
-        return res.json(car);
     },
     async list(req, res) {
-        var { placa } = req.params;
+        const { placa } = req.params;
         var car = await Car.findOne( {placa} );
         res.json(car)
     }
