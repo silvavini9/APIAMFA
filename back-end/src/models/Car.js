@@ -6,10 +6,12 @@ const CarSchema = new Schema({
         required: true,
     },
     averages: [{
-        average:{type: String },
-        date: {type: Date, default: Date.now()}
+        type: String,
     }],
-
+    dateAverages: [{
+        type: Date,
+        default: Date.now,
+    }],
 })
 
 module.exports = model('Car', CarSchema);

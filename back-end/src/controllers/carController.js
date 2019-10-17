@@ -13,6 +13,7 @@ module.exports = {
 
         if( carExist != null ){
             carExist.averages.push(average);
+            carExist.dateAverages.push(Date.now());
             await carExist.save( (error) => {
                 if(error){
                     res.json(error);
@@ -23,7 +24,8 @@ module.exports = {
         }else {
             const car = new Car({
                 placa: placa,
-                averages: {average},
+                averages: average,
+                dateAverages: Date.now(),
             });
 
             await car.save( (error) => {
@@ -36,10 +38,5 @@ module.exports = {
             });
         }
     },
-    async list(req, res) {
-        const { placa } = req.params;
-        var car = await Car.findOne( {placa} );
-        res.json(car)
-    }
-    
+   
 }
